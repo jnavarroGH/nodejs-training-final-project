@@ -1,7 +1,7 @@
 #!/bin/sh 
 
 # echo "***** Installing all dependencies *****"
-# yarn
+yarn
 
 echo "***** Starting MongoDB instance *****"
 docker compose up -d
