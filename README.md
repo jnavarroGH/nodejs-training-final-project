@@ -2,8 +2,10 @@
 
 ## Description
 
-The project is based on [Nest](https://github.com/nestjs/nest) framework using TypeScript and MongoDB.
+The project is based on [Nest](https://github.com/nestjs/nest) framework using CQRS, TypeScript and MongoDB.
 It includes Devcontainer configurations and container features (docker-in-docker, serverless framework, aws cli, and localstack)
+
+Example Nest, CQRS, DDD project: https://github.com/kyhsa93/nestjs-rest-cqrs-example
 
 ## Tasks 
   - Add husky
