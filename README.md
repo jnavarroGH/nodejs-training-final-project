@@ -1,4 +1,4 @@
-# Intermediate NodeJS Training - Final exam
+# Intermediate NodeJS Training - Final project
 
 ## Description
 
