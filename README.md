@@ -8,8 +8,9 @@ It includes Devcontainer configurations and container features (docker-in-docker
 Example Nest, CQRS, DDD project: https://github.com/kyhsa93/nestjs-rest-cqrs-example
 
 ## Tasks 
-  - Add husky
+  - Fork this project and provide repo access to: @rcdelacruz
+  - Add husky configurations
   - Add Serverless framework configurations and deploy using LocalStack
   - Convert to Prisma
   - Refactor to Domain-driven Design 
-  - Commit your code to github and provide repo access to: @rcdelacruz
+  
