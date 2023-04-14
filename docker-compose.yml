@@ -10,5 +10,27 @@ services:
     volumes:
       - mongodb_data_container:/data/db
 
+  localstack:
+    container_name: "localstack_main"
+    image: localstack/localstack
+    restart: always
+    ports:
+      - "4566:4566"            # LocalStack Gateway
+      - "4510-4559:4510-4559"  # external services port range
+    environment:
+      - DEBUG=true
+      - PERSISTENCE=1
+      - DYNAMODB_SHARE_DB=1
+      - LAMBDA_EXECUTOR=docker-reuse
+      - DOCKER_HOST=unix:///var/run/docker.sock
+    volumes:
+      - "./localstack_data:/var/lib/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    networks:
+      default:
+        aliases:
+          - localhost.localstack.cloud  # set this network aliases to expose localstack to other containers
 volumes:
   mongodb_data_container:
+  localstack:
+

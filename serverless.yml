@@ -1,0 +1,33 @@
+service: nodejs-final-project
+
+useDotenv: true
+
+plugins:
+  # - serverless-webpack
+  # - serverless-webpack-prisma
+  - serverless-offline
+
+
+package:
+  patterns:
+    - '!node_modules/.prisma/client/libquery_engine-*'
+    - 'node_modules/.prisma/client/libquery_engine-rhel-*'
+    - '!node_modules/prisma/libquery_engine-*'
+    - '!node_modules/@prisma/engines/**'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  environment:
+    DATABASE_URL: ${env:DATABASE_URL}
+
+functions:
+  main:
+    handler: dist/serverless.handler
+    events:
+      - http:
+          method: ANY
+          path: /
+      - http:
+          method: ANY
+          path: '{proxy+}'
